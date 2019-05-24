@@ -1,0 +1,44 @@
+[
+  {
+    "description": "using 6lowpan",
+    "img_url": "/jj/dev/img_1.jpg",
+    "post_idx": 1,
+    "project_name": "capston",
+    "type": "network"
+  },
+  {
+    "description": "using Zigbee",
+    "img_url": "/jj/dev/img_1.jpg",
+    "post_idx": 2,
+    "project_name": "capston",
+    "type": "network"
+  },
+  {
+    "description": "using Zigbee",
+    "img_url": "/jj/dev/img_1.jpg",
+    "post_idx": 2,
+    "project_name": "capston",
+    "type": "network"
+  },
+  {
+    "description": "using 6lowpan",
+    "img_url": "/jj/dev/img_1.jpg",
+    "post_idx": 1,
+    "project_name": "capston",
+    "type": "network"
+  },
+  {
+    "description": "using Zigbee",
+    "img_url": "/jj/dev/img_1.jpg",
+    "post_idx": 2,
+    "project_name": "capston",
+    "type": "network"
+  },
+  {
+    "description": "using Zigbee",
+    "img_url": "/jj/dev/img_1.jpg",
+    "post_idx": 2,
+    "project_name": "capston",
+    "type": "network"
+  }
+]

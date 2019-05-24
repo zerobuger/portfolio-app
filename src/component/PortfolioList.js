@@ -5,6 +5,7 @@ import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
+import Grid from '@material-ui/core/Grid';
 import PortfolioCard from './PortfolioCard';
 //import './PortfolioList.css';
 
@@ -24,19 +25,28 @@ const styles = theme => ({
 
 const PortfolioList = (props) => {
     const { classes } = props;
-    const portfolios = props.portfolios.map((portfolio) => {
-        return <PortfolioCard portfolio={portfolio} />
-    });
+    // const portfolios = props.portfolios.map((portfolio) => {
+    //     return <PortfolioCard portfolio={portfolio} />
+    // });
 
     return (
         <div className={classes.root}>
-            <GridList cellHeight={180} className={classes.gridList}>
-            <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">December</ListSubheader>
-        </GridListTile>
-            {portfolios}
-            </GridList>
+            <Grid container spacing={24} style={{padding: 24}}>
+                {props.portfolios.map((portfolio) => (
+                    <Grid item xs={12} sm={6} lg={4} xl={3}>
+                        <PortfolioCard portfolio={portfolio} />
+                    </Grid>
+                ))}
+            </Grid>
         </div>
+        // <div className={classes.root}>
+        //     <GridList cellHeight={180} className={classes.gridList}>
+        //     <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
+        //   <ListSubheader component="div">December</ListSubheader>
+        // </GridListTile>
+        //     {portfolios}
+        //     </GridList>
+        // </div>
     );
 }
 
