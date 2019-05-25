@@ -3,42 +3,42 @@
     "description": "using 6lowpan",
     "img_url": "/jj/dev/img_1.jpg",
     "post_idx": 1,
-    "project_name": "capston",
+    "project_name": "Secure IoT Protocol",
     "type": "network"
   },
   {
     "description": "using Zigbee",
     "img_url": "/jj/dev/img_1.jpg",
     "post_idx": 2,
-    "project_name": "capston",
+    "project_name": "Smart Campus Bike",
     "type": "network"
   },
   {
-    "description": "using Zigbee",
+    "description": "using OpenCV",
     "img_url": "/jj/dev/img_1.jpg",
-    "post_idx": 2,
-    "project_name": "capston",
+    "post_idx": 3,
+    "project_name": "Smart Drone",
+    "type": "computer vision"
+  },
+  {
+    "description": "using mobile",
+    "img_url": "/jj/dev/img_1.jpg",
+    "post_idx": 4,
+    "project_name": "Campus Mooc",
+    "type": "mobile"
+  },
+  {
+    "description": "using MQTT",
+    "img_url": "/jj/dev/img_1.jpg",
+    "post_idx": 5,
+    "project_name": "Secure PubSub",
     "type": "network"
   },
   {
-    "description": "using 6lowpan",
+    "description": "using encryption",
     "img_url": "/jj/dev/img_1.jpg",
-    "post_idx": 1,
-    "project_name": "capston",
-    "type": "network"
-  },
-  {
-    "description": "using Zigbee",
-    "img_url": "/jj/dev/img_1.jpg",
-    "post_idx": 2,
-    "project_name": "capston",
-    "type": "network"
-  },
-  {
-    "description": "using Zigbee",
-    "img_url": "/jj/dev/img_1.jpg",
-    "post_idx": 2,
-    "project_name": "capston",
+    "post_idx": 6,
+    "project_name": "Secure network",
     "type": "network"
   }
 ]

@@ -1,23 +1,11 @@
 import React from 'react';
-import jsonServerProvider from 'ra-data-json-server';
 import zerobuger from '../api/zerobuger';
-import NavBar from './NavBar'
-import SearchBar from './SearchBar';
 import PortfolioList from './PortfolioList';
-import samplePortfolios from '../mockdata/samplePortfolios';
-// import UserList from './UserList';
+import PortfolioDetail from './PortfolioDetail';
 
 class App extends React.Component {
 
-  constructor(props){
-    super(props);
-
-    // Set initial state
-    // this.state = { portfolios: [] };
-    this.state = { portfolios: samplePortfolios };    
-  }
-
-  
+ 
   componentDidMount() {
     // Make initial API call to fetch list of portfolios
     // zerobuger.get('/show_project')
@@ -30,10 +18,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div >
-        <NavBar />
-        <SearchBar />
-        <PortfolioList portfolios={this.state.portfolios}/>
+      <div className="ui container grid">
+          <div className="ui row">
+            <div className="column eight wide">
+              <PortfolioList />
+            </div>
+            <div className="column eight wide">
+              <PortfolioDetail />
+            </div>
+          </div>
       </div>
     );
   }
