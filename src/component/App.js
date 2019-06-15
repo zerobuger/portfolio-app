@@ -1,35 +1,29 @@
 import React from 'react';
-import zerobuger from '../api/zerobuger';
-import PortfolioList from './PortfolioList';
-import PortfolioDetail from './PortfolioDetail';
+import { Router, Route } from 'react-router-dom';
 
-class App extends React.Component {
+import PortfolioCreate from './portfolios/PortfolioCreate';
+import PortfolioDelete from './portfolios/PortfolioDelete';
+import PortfolioEdit from './portfolios/PortfolioEdit';
+import PortfolioList from './portfolios/PortfolioList.js';
+import PortfolioShow from './portfolios/PortfolioShow';
+import Header from './Header';
+import history from '../history';
 
- 
-  componentDidMount() {
-    // Make initial API call to fetch list of portfolios
-    // zerobuger.get('/show_project')
-    //   .then(res => {
-    //     const portfolios = res.data;
-    //     console.log(`Portfolios fetched : ${portfolios}`);
-    //     this.setState({ portfolios });
-    //   })
-  }
-
-  render() {
-    return (
-      <div className="ui container grid">
-          <div className="ui row">
-            <div className="column eight wide">
-              <PortfolioList />
-            </div>
-            <div className="column eight wide">
-              <PortfolioDetail />
-            </div>
-          </div>
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div className="ui container">
+      <Router history={history}>
+        <div>
+          <Header />
+          <Route path="/" exact component={PortfolioList} />
+          <Route path="/portfolios/new" exact component={PortfolioCreate} />
+          <Route path="/portfolios/edit/:id" exact component={PortfolioEdit} />
+          <Route path="/portfolios/delete" exact component={PortfolioDelete} />
+          <Route path="/portfolios/show" exact component={PortfolioShow} />
+        </div>
+      </Router>
+    </div>
+  );
+};
 
 export default App;
