@@ -15,9 +15,9 @@ class PortfolioList extends React.Component {
             return (
                 <div className="right floated content">
                     <Link to={`/portfolios/edit/${portfolio.id}`} className="ui button primary">Edit</Link>
-                    <button className="ui button negative">
+                    <Link to={`/portfolios/delete/${portfolio.id}`} className="ui button negative">
                         Delete
-                    </button>
+                    </Link>
                 </div>
             );
         }
@@ -40,7 +40,7 @@ class PortfolioList extends React.Component {
     renderCreate(){
         if(this.props.isSignedIn){
             return (
-                <div styple={{textAlign: 'right'}}>
+                <div style={{textAlign: 'right'}}>
                     <Link to="/portfolios/new" className="ui button primary">
                         Create Portfolio
                     </Link>

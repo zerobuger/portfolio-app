@@ -18,7 +18,7 @@ const App = () => {
           <Route path="/" exact component={PortfolioList} />
           <Route path="/portfolios/new" exact component={PortfolioCreate} />
           <Route path="/portfolios/edit/:id" exact component={PortfolioEdit} />
-          <Route path="/portfolios/delete" exact component={PortfolioDelete} />
+          <Route path="/portfolios/delete/:id" exact component={PortfolioDelete} />
           <Route path="/portfolios/show" exact component={PortfolioShow} />
         </div>
       </Router>

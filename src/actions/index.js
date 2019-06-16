@@ -58,4 +58,5 @@ export const deletePortfolio = (id) => async dispatch => {
     await portfolios.delete(`/portfolios/${id}`);
 
     dispatch({ type: DELETE_PORTFOLIO, payload: id});
+    history.push('/');
 };
