@@ -30,7 +30,9 @@ class PortfolioList extends React.Component {
                     {this.renderAdmin(portfolio)}
                     <i className="large middle aligned icon camera" />
                     <div className="content">
-                        {portfolio.title}
+                        <Link to={`/portfolios/${portfolio.id}`} className="header">
+                            {portfolio.title}
+                        </Link>
                         <div className="description">{portfolio.description}</div>
                     </div>
                 </div>

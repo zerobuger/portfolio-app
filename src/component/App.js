@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
+import { Router, Route, Switch } from 'react-router-dom';
 
 import PortfolioCreate from './portfolios/PortfolioCreate';
 import PortfolioDelete from './portfolios/PortfolioDelete';
@@ -15,11 +15,14 @@ const App = () => {
       <Router history={history}>
         <div>
           <Header />
-          <Route path="/" exact component={PortfolioList} />
-          <Route path="/portfolios/new" exact component={PortfolioCreate} />
-          <Route path="/portfolios/edit/:id" exact component={PortfolioEdit} />
-          <Route path="/portfolios/delete/:id" exact component={PortfolioDelete} />
-          <Route path="/portfolios/show" exact component={PortfolioShow} />
+          <Switch>
+            <Route path="/" exact component={PortfolioList} />
+            <Route path="/portfolios/new" exact component={PortfolioCreate} />
+            <Route path="/portfolios/edit/:id" exact component={PortfolioEdit} />
+            <Route path="/portfolios/delete/:id" exact component={PortfolioDelete} />
+            <Route path="/portfolios/:id" exact component={PortfolioShow} />
+          </Switch>
+
         </div>
       </Router>
     </div>
