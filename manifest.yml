@@ -1,0 +1,4 @@
+---
+applications:
+- name: portfolio-app
+  memory: 1024M
