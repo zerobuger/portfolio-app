@@ -13,11 +13,11 @@ class PortfolioList extends React.Component {
     renderAdmin(portfolio){
         if(portfolio.userId === this.props.currentUserId){
             return (
-                <div className="right floated content">
-                    <Link to={`/portfolios/edit/${portfolio.id}`} className="ui button primary">Edit</Link>
-                    <Link to={`/portfolios/delete/${portfolio.id}`} className="ui button negative">
-                        Delete
-                    </Link>
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <Link to={`/portfolios/edit/${portfolio.id}`} className="ui basic green button">Edit</Link>
+                        <Link to={`/portfolios/delete/${portfolio.id}`} className="ui basic red button">Delete</Link>  
+                    </div>
                 </div>
             );
         }
@@ -26,15 +26,23 @@ class PortfolioList extends React.Component {
     renderList(){
         return this.props.portfolios.map(portfolio => {
             return (
-                <div className="item" key={portfolio.id}>
-                    {this.renderAdmin(portfolio)}
-                    <i className="large middle aligned icon camera" />
+                <div className="card" key={portfolio.id}>
+                    
+                    {/* <i className="large middle aligned icon camera" /> */}
                     <div className="content">
-                        <Link to={`/portfolios/${portfolio.id}`} className="header">
-                            {portfolio.title}
-                        </Link>
-                        <div className="description">{portfolio.description}</div>
+                        <div class="header">
+                            <Link to={`/portfolios/${portfolio.id}`} className="header">
+                                {portfolio.title}
+                            </Link>
+                        </div>
+                        <div class="meta">
+                            {portfolio.type}
+                        </div>
+                        <div class="description">
+                            {portfolio.description}
+                        </div>
                     </div>
+                    {this.renderAdmin(portfolio)}
                 </div>
             );
         });
@@ -44,7 +52,7 @@ class PortfolioList extends React.Component {
             return (
                 <div style={{textAlign: 'right'}}>
                     <Link to="/portfolios/new" className="ui button primary">
-                        Create Portfolio
+                        + Create Portfolio
                     </Link>
                 </div>
             );
@@ -55,8 +63,8 @@ class PortfolioList extends React.Component {
         return (
             <div>
                 <h2>Portfolios</h2>
-                <div className="ui celled list">{this.renderList()}</div>
                 {this.renderCreate()}
+                <div className="ui cards">{this.renderList()}</div>
             </div>
         );
     }
