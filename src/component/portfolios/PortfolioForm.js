@@ -34,6 +34,7 @@ class PortfolioForm extends React.Component {
                 className="ui form error">
                 <Field name="title" component={this.renderInput} label="Enter Title" />
                 <Field name="description" component={this.renderInput} label="Enter Description" />
+                <Field name="github" component={this.renderInput} label="Enter Github Address" />
 
                 <Field name="timeline" component={this.renderInput} label="Enter Timeline" />
                 <Field name="goal" component={this.renderInput} label="Enter Goal" />

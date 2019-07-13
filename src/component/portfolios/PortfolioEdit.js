@@ -18,7 +18,7 @@ class PortfolioEdit extends React.Component {
             <div>
                 <h3>Edit a Portfolio</h3>
                 <PortfolioForm
-                    initialValues={_.pick(this.props.portfolio, 'title', 'description')}
+                    initialValues={_.pick(this.props.portfolio, 'title', 'description', 'github', 'timeline', 'goal', 'member', 'job', 'type')}
                     onSubmit={this.onSubmit}
                 />
             </div>
