@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import TagInput from '../input/TagInput';
 
 class PortfolioForm extends React.Component {
     renderError({ error, touched }){
@@ -40,7 +41,7 @@ class PortfolioForm extends React.Component {
                 <Field name="goal" component={this.renderInput} label="Enter Goal" />
                 <Field name="member" component={this.renderInput} label="Enter Member" />
                 <Field name="job" component={this.renderInput} label="Enter Job" />
-                <Field name="type" component={this.renderInput} label="Enter Type" />
+                <Field name="type" component={TagInput} label="Enter Type" />
                 <button className="ui button primary">Submit</button>              
             </form>
         );
