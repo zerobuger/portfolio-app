@@ -11,18 +11,18 @@ class PortfolioShow extends React.Component {
             return <div>Loading...</div>
         }
 
-        const { title, description, timeline, goal
-                ,member, job, type } = this.props.portfolio;
+        const { title, description, goal
+                ,role, project_type } = this.props.portfolio;
 
         return (
             <div>
                 <h1>{title}</h1>
                 <h5>{description}</h5>
-                <h5>{timeline}</h5>
+                {/* <h5>{timeline}</h5> */}
                 <h5>{goal}</h5>
-                <h5>{member}</h5>
-                <h5>{job}</h5>
-                <h5>{type}</h5>
+                {/* <h5>{member}</h5> */}
+                <h5>{role}</h5>
+                <h5>{project_type}</h5>
             </div>
         );
     }

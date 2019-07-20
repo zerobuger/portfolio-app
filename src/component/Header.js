@@ -12,7 +12,7 @@ const Header = () => {
                 <Link to="/" className="item">
                     All Portfolios
                 </Link>
-                <div class="item">
+                <div className="item">
                     <GoogleAuth />
                 </div>
             </div>

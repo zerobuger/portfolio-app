@@ -35,13 +35,13 @@ class PortfolioForm extends React.Component {
                 className="ui form error">
                 <Field name="title" component={this.renderInput} label="Enter Title" />
                 <Field name="description" component={this.renderInput} label="Enter Description" />
-                <Field name="github" component={this.renderInput} label="Enter Github Address" />
+                {/* <Field name="github" component={this.renderInput} label="Enter Github Address" /> */}
 
-                <Field name="timeline" component={this.renderInput} label="Enter Timeline" />
+                {/* <Field name="timeline" component={this.renderInput} label="Enter Timeline" /> */}
                 <Field name="goal" component={this.renderInput} label="Enter Goal" />
-                <Field name="member" component={this.renderInput} label="Enter Member" />
-                <Field name="job" component={this.renderInput} label="Enter Job" />
-                <Field name="type" component={TagInput} label="Enter Type" />
+                {/* <Field name="member" component={this.renderInput} label="Enter Member" /> */}
+                <Field name="role" component={this.renderInput} label="Enter Role" />
+                <Field name="project_type" component={this.renderInput} label="Enter Project Type" />
                 <button className="ui button primary">Submit</button>              
             </form>
         );
@@ -58,6 +58,18 @@ const validate = (formValues) => {
     if(!formValues.description){
         // only ran if the user did not enter a description
         errors.description = 'You must enter a description';
+    }
+    if(!formValues.goal){
+        // only ran if the user did not enter a goal
+        errors.goal = 'You must enter a goal';
+    }
+    if(!formValues.role){
+        // only ran if the user did not enter a role
+        errors.role = 'You must enter a role';
+    }
+    if(!formValues.project_type){
+        // only ran if the user did not enter a project_type
+        errors.project_type = 'You must enter a project_type';
     }
 
     return errors;

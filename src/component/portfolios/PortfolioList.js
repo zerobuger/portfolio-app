@@ -6,17 +6,19 @@ import { fetchPortfolios } from '../../actions';
 class PortfolioList extends React.Component {
     // Initially load portfolios
     componentDidMount(){
+        console.log("fetching portfolios")
         this.props.fetchPortfolios();
     }
 
     // This will be rendered only to admins
     renderAdmin(portfolio){
-        if(portfolio.userId === this.props.currentUserId){
+        console.log(portfolio);
+        if(portfolio.user_id === this.props.currentUserId){
             return (
-                <div class="extra content">
-                    <div class="ui two buttons">
-                        <Link to={`/portfolios/edit/${portfolio.id}`} className="ui basic green button">Edit</Link>
-                        <Link to={`/portfolios/delete/${portfolio.id}`} className="ui basic red button">Delete</Link>  
+                <div className="extra content">
+                    <div className="ui two buttons">
+                        <Link to={`/portfolios/edit/${portfolio.post_id}`} className="ui basic green button">Edit</Link>
+                        <Link to={`/portfolios/delete/${portfolio.post_id}`} className="ui basic red button">Delete</Link>  
                     </div>
                 </div>
             );
@@ -24,32 +26,35 @@ class PortfolioList extends React.Component {
     }
 
     renderList(){
+        console.log(this.props.portfolios);
         return this.props.portfolios.map(portfolio => {
+
+            console.log(portfolio);
 
             // Only render my Portfolio
 
-            if(portfolio.userId === this.props.currentUserId){
+            // if(portfolio.user_id === this.props.currentUserId){
                 return (
-                    <div className="card" key={portfolio.id}>
+                    <div className="card" key={portfolio.post_id}>
                         
                         {/* <i className="large middle aligned icon camera" /> */}
                         <div className="content">
-                            <div class="header">
-                                <Link to={`/portfolios/${portfolio.id}`} className="header">
+                            <div className="header">
+                                <Link to={`/portfolios/${portfolio.post_id}`} className="header">
                                     {portfolio.title}
                                 </Link>
                             </div>
-                            <div class="meta">
+                            <div className="meta">
                                 {portfolio.type}
                             </div>
-                            <div class="description">
+                            <div className="description">
                                 {portfolio.description}
                             </div>
                         </div>
                         {this.renderAdmin(portfolio)}
                     </div>
                 );
-            }
+            // }
         });
     }
     renderCreate(){
@@ -76,6 +81,7 @@ class PortfolioList extends React.Component {
 };
 
 const mapStateToProps = (state) => {
+    console.log(`PortfolioList mapstatetoprops : ${Object.values(state.portfolios)}`)
     return {
         portfolios: Object.values(state.portfolios),
         currentUserId: state.auth.userId,

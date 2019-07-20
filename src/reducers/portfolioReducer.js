@@ -8,9 +8,10 @@ import {
 } from '../actions/types';
 
 export default (state = {}, action) => {
+    console.log(`Reducer : ${state}`)
     switch(action.type){
         case FETCH_PORTFOLIOS:
-            return { ...state, ..._.mapKeys(action.payload, 'id') }
+            return { ...state, ..._.mapKeys(action.payload, 'post_id') }
         case FETCH_PORTFOLIO:
             return { ...state, [action.payload.id]: action.payload };
         case CREATE_PORTFOLIO:

@@ -27,7 +27,7 @@ export const signOut = () => {
 // Portfolio action creator
 export const createPortfolio = formValues => async (dispatch, getState) => {
     const { userId } = getState().auth;
-    const response = await portfolios.post('/portfolios', { ...formValues, userId });
+    const response = await portfolios.post('/add_project', { ...formValues, userId });
 
     dispatch({ type: CREATE_PORTFOLIO, payload: response.data });
     // Do some programmtic nagivation to
@@ -37,6 +37,9 @@ export const createPortfolio = formValues => async (dispatch, getState) => {
 
 export const fetchPortfolios = () => async dispatch => {
     const response = await portfolios.get('/portfolios');
+
+    console.log("fetching portfolios");
+    console.log(response.data);   
 
     dispatch({ type: FETCH_PORTFOLIOS, payload: response.data });
 };
