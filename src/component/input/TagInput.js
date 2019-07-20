@@ -4,7 +4,7 @@ class TagInput extends React.Component{
     render(){
         return (
             <div>
-                <label>Tag Input</label>
+                <label>This is Tag Input</label>
                 <input  autoComplete="off" />
             </div>
         );
