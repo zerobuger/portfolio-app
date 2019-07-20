@@ -25,26 +25,31 @@ class PortfolioList extends React.Component {
 
     renderList(){
         return this.props.portfolios.map(portfolio => {
-            return (
-                <div className="card" key={portfolio.id}>
-                    
-                    {/* <i className="large middle aligned icon camera" /> */}
-                    <div className="content">
-                        <div class="header">
-                            <Link to={`/portfolios/${portfolio.id}`} className="header">
-                                {portfolio.title}
-                            </Link>
+
+            // Only render my Portfolio
+
+            if(portfolio.userId === this.props.currentUserId){
+                return (
+                    <div className="card" key={portfolio.id}>
+                        
+                        {/* <i className="large middle aligned icon camera" /> */}
+                        <div className="content">
+                            <div class="header">
+                                <Link to={`/portfolios/${portfolio.id}`} className="header">
+                                    {portfolio.title}
+                                </Link>
+                            </div>
+                            <div class="meta">
+                                {portfolio.type}
+                            </div>
+                            <div class="description">
+                                {portfolio.description}
+                            </div>
                         </div>
-                        <div class="meta">
-                            {portfolio.type}
-                        </div>
-                        <div class="description">
-                            {portfolio.description}
-                        </div>
+                        {this.renderAdmin(portfolio)}
                     </div>
-                    {this.renderAdmin(portfolio)}
-                </div>
-            );
+                );
+            }
         });
     }
     renderCreate(){
